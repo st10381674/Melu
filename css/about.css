@@ -1,0 +1,50 @@
+/* about_us_area */
+.about_us_area {
+  background: #fefefe;
+}
+.about_us_area .about_row {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.about_us_area .about_row p {
+  font: 400 14px/26px "Roboto", sans-serif;
+  color: #555555;
+  padding-top: 28px;
+  padding-bottom: 54px;
+}
+.about_us_area .about_row .about_client {
+  padding-top: 7px;
+}
+.about_us_area .about_row .about_client img {
+  max-width: 100%;
+}
+.about_us_area .about_row .our_skill_inner .single_skill h3 {
+  font: 700 18px "Roboto", sans-serif;
+  color: #222222;
+  padding-bottom: 8px;
+}
+.about_us_area .about_row .our_skill_inner .single_skill .progress {
+  background: #f5f5f5;
+  box-shadow: none;
+  height: 8px;
+  width: 100%;
+  overflow: visible;
+  border-radius: 0;
+  position: relative;
+  margin-bottom: 40px;
+}
+.about_us_area .about_row .our_skill_inner .single_skill .progress .progress-bar {
+  background: #f6b60b;
+  box-shadow: none;
+}
+.about_us_area .about_row .our_skill_inner .single_skill .progress .progress-bar .progress_parcent {
+  font: 700 18px "Roboto", sans-serif;
+  color: #222222;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+.about_us_area .about_us2_pages {
+  padding-top: 90px;
+}
+
