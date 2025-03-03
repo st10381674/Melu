@@ -33,6 +33,361 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+       
+    <style>
+
+
+      /* Home container: Full width, takes up minimum full height, centered content */
+      .home {
+        position: relative; /* Relative positioning for child elements */
+        width: 100%; /* Full width */
+        min-height: 100vh; /* Minimum height takes up the entire viewport height */
+        display: flex; /* Use Flexbox for layout */
+        justify-content: center; /* Center child elements horizontally */
+        flex-direction: column; /* Stack child elements vertically */
+        background: white; /* White background */
+      }
+      
+      /* Home container for content positioning */
+      .home-container {
+        position: absolute; /* Absolute positioning to control layout */
+        width: 100%; /* Full width */
+        z-index: 888; /* Stack above other elements */
+        align-items: center; /* Align items horizontally */
+        display: flex; /* Use Flexbox for layout */
+        justify-content: center; /* Center content horizontally */
+        flex-direction: column; /* Stack child elements vertically */
+      }
+      
+      /* Home pseudo-element for overlay background */
+      .home::before {
+        z-index: 777; /* Stack below content but above the video */
+        content: ''; /* Required for pseudo-elements */
+        position: absolute; /* Absolute positioning */
+        background: rgba(4, 133, 21, 0.3); /* Semi-transparent green overlay */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        top: 0; /* Position at the top */
+        left: 0; /* Position at the left */
+      }
+      
+      /* Styling for the main content of the home section */
+      .home .home__content {
+        z-index: 888; /* On top of the background */
+        width: 70%; /* Set content width to 70% */
+        top: 50%; /* Positioned 50% from the top */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        position: absolute; /* Absolute positioning */
+        display: none; /* Initially hidden */
+        text-align: left; /* Align text to the left */
+      }
+      
+      /* Display the content when it has an 'active' class */
+      .home .home__content.active {
+        display: block; /* Show content when active */
+      }
+      
+      /* Heading 1 styling */
+      .home .home__content h1 {
+        font-size: 50px; /* Large font size */
+        font-weight: 900; /* Bold weight */
+        margin-bottom: 20px; /* Reduced margin for better spacing */
+        color: #00ff22; /* Green color */
+        text-transform: uppercase; /* Uppercase text */
+        letter-spacing: 2px; /* Slightly increased letter spacing */
+      }
+      
+      /* Heading 2 styling */
+      .home .home__content h2 {
+        font-size: 4rem; /* Large font size */
+        font-weight: 400; /* Normal font weight */
+        margin-bottom: 20px; /* Added margin for spacing */
+        color: #00ff22; /* Green color */
+        text-transform: uppercase; /* Uppercase text */
+        letter-spacing: 1px; /* Add some letter spacing */
+      }
+      
+      /* Heading 3 styling */
+      .home .home__content h3 {
+        font-size: 2.5rem; /* Sub-heading font size */
+        font-weight: 700; /* Bold weight */
+        margin-bottom: 20px; /* Added margin for spacing */
+        color: #ffffff; /* White text */
+      }
+      
+      /* Paragraph styling (if you add paragraphs later) */
+      .home .home__content p {
+        font-size: 1.2rem; /* Medium font size */
+        color: #ffffff; /* White text */
+        line-height: 1.6; /* Improve readability */
+        margin-bottom: 20px; /* Added margin for spacing */
+      }
+      
+      /* Styling for background video */
+      .home video {
+        z-index: 000; /* Send to background */
+        position: absolute; /* Absolute positioning */
+        top: 0; /* Position at the top */
+        left: 0; /* Position at the left */
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        object-fit: cover; /* Cover the container while maintaining aspect ratio */
+      }
+      
+      /* Navigation styling for slider */
+      .slider-navigation {
+        z-index: 888; /* Above other elements */
+        position: relative; /* Relative positioning */
+        display: flex; /* Use Flexbox */
+        justify-content: center; /* Center the buttons */
+        transform: translateY(650px); /* Move the navigation down */
+        margin-bottom: 12px; /* Margin at the bottom */
+      }
+      
+      /* Button styling for navigation */
+      .slider-navigation .nav-btn {
+        width: 12px; /* Set button width */
+        height: 12px; /* Set button height */
+        background: var(--color-heading); /* Background color from variable */
+        border-radius: 50%; /* Make the button circular */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.5); /* Shadow effect */
+        transition: 0.3s ease; /* Smooth transition on hover */
+      }
+      
+      /* Active state for navigation button */
+      .slider-navigation .nav-btn.active {
+        background: var(--color-primary); /* Change color when active */
+      }
+      
+      /* Space out navigation buttons except for the last one */
+      .slider-navigation .nav-btn:not(:last-child) {
+        margin-right: 20px; /* Right margin */
+      }
+      
+      /* Hover effect on navigation buttons */
+      .slider-navigation .nav-btn:hover {
+        transform: scale(1.2); /* Scale up on hover */
+      }
+      
+      /* Styling for video slides in the slider */
+      .video-slide {
+        position: absolute; /* Absolute positioning */
+        width: 100%; /* Full width */
+        clip-path: circle(0% at 0 50%); /* Initial clip path for circular effect */
+        transition: 2s ease; /* Smooth transition */
+        transition-property: clip-path; /* Transition clip-path property */
+      }
+      
+      /* Active state for video slide (expands the circle) */
+      .video-slide.active {
+        clip-path: circle(150% at 0 50%); /* Expand clip path to show full video */
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        .home .home__content {
+          width: 80%; /* Increase width for smaller screens */
+        }
+      
+        .home .home__content h1 {
+          font-size: 40px; /* Reduce font size */
+        }
+      
+        .home .home__content h2 {
+          font-size: 3rem; /* Reduce font size */
+        }
+      
+        .home .home__content h3 {
+          font-size: 2rem; /* Reduce font size */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .home .home__content {
+          width: 90%; /* Increase width for mobile */
+          top: 30%; /* Adjust vertical positioning */
+        }
+      
+        .home .home__content h1 {
+          font-size: 30px; /* Further reduce font size */
+        }
+      
+        .home .home__content h2 {
+          font-size: 2.5rem; /* Further reduce font size */
+        }
+      
+        .home .home__content h3 {
+          font-size: 1.5rem; /* Further reduce font size */
+        }
+      
+        .slider-navigation {
+          transform: translateY(500px); /* Adjust navigation position */
+        }
+      
+        .slider-navigation .nav-btn {
+          width: 10px;
+          height: 10px;
+        }
+      
+        .slider-navigation .nav-btn:not(:last-child) {
+          margin-right: 15px; /* Reduce spacing between buttons */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .home .home__content {
+          width: 95%; /* Full width for very small screens */
+          top: 20%; /* Adjust vertical positioning */
+        }
+      
+        .home .home__content h1 {
+          font-size: 24px; /* Smallest font size */
+        }
+      
+        .home .home__content h2 {
+          font-size: 2rem; /* Smallest font size */
+        }
+      
+        .home .home__content h3 {
+          font-size: 1.2rem; /* Smallest font size */
+        }
+      
+        .slider-navigation {
+          transform: translateY(400px); /* Adjust navigation position */
+        }
+      }
+      
+      
+      /* Latest work section */
+      #latest-work {
+        padding: 70px 0;
+        text-align: center;
+        background-color: #000;
+      }
+      
+      #latest-work .containerr {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      
+      #latest-work h2 {
+        font-size: 2.5em;
+        margin-bottom: 60px;
+        color: #00ff0d;
+      }
+      
+      /* Grid layout */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 columns for larger screens */
+        grid-auto-rows: 200px; /* Default row height */
+        gap: 20px; /* Spacing between grid items */
+      }
+      
+      /* Grid item styling */
+      .grid-item {
+        position: relative;
+        background-color: #222;
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Ensure images and videos cover the grid item */
+      .grid-item img,
+      .grid-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      /* Text overlay for grid items */
+      .grid-item h3 {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        margin: 0;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        font-size: 1.2em;
+      }
+      
+      /* Large grid items (span 4 columns and 2 rows) */
+      .grid-item.large {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+      
+      /* Medium grid items (span 2 columns) */
+      .grid-item.medium {
+        grid-column: span 2;
+      }
+      
+      /* Small grid items (span 1 column and 1 row) */
+      .grid-item.small {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        /* Reduce the number of columns for medium screens */
+        .grid {
+          grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        }
+      
+        /* Adjust large items to span 3 columns */
+        .grid-item.large {
+          grid-column: span 3;
+        }
+      
+        /* Adjust medium items to span 2 columns */
+        .grid-item.medium {
+          grid-column: span 2;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        /* Stack grid items vertically on smaller screens */
+        .grid {
+          grid-template-columns: 1fr; /* 1 column */
+          grid-auto-rows: auto; /* Auto row height */
+        }
+      
+        /* Reset spans for all items */
+        .grid-item.large,
+        .grid-item.medium,
+        .grid-item.small {
+          grid-column: span 1; /* All items span 1 column */
+          grid-row: span 1; /* All items span 1 row */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        /* Adjust padding and font sizes for very small screens */
+        #latest-work {
+          padding: 40px 0;
+        }
+      
+        #latest-work h2 {
+          font-size: 2em;
+          margin-bottom: 40px;
+        }
+      
+        /* Reduce gap between grid items */
+        .grid {
+          gap: 10px;
+        }
+      }
+      
+      </style>
+
+      
 </head>
 <body>
     <!-- Preloader -->
@@ -306,7 +661,7 @@
              
           </div>
           <div class="grid-item large">
-              <img src="images/DSC05344.jpg" alt="Large Image">
+              <img src="images/DSC09049.jpg" alt="Large Image">
              
           </div>
           <div class="grid-item medium">
@@ -344,406 +699,56 @@
 
 <!-- End Our Partners Area -->
 
-   
-        <!-- Footer Area -->
-        <footer class="footer_area">
-          <div class="container">
-              <div class="footer_row row">
-                  <div class="col-md-3 col-sm-6 footer_about">
-                      <h2>ABOUT OUR COMPANY</h2>
-                      <img src="images/vr.PNG" alt="">
-                      <ul class="socail_icon">
-                          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-                      </ul>
-                  </div>
-                  <div class="col-md-3 col-sm-6 footer_about quick">
-                      <h2>Quick links</h2>
-                      <ul class="quick_link">
-                          <li><a href="index.html"><i class="fa fa-chevron-right"></i>HOME</a></li>
-                          <li><a href="about.html"><i class="fa fa-chevron-right"></i>WHO ARE WE</a></li>
-                          <li><a href="Portfolio.html"><i class="fa fa-chevron-right"></i>OUR PORTFOLIO</a></li>
-                          <li><a href="Service.html"><i class="fa fa-chevron-right"></i>OUR SERVICES</a></li>
-                          <li><a href="contact.html"><i class="fa fa-chevron-right"></i>GET IN TOUCH</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-md-3 col-sm-6 footer_about">
-                      <h2>Twitter Feed</h2>
-                      <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                      <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                  </div>
-                  <div class="col-md-3 col-sm-6 footer_about">
-                      <h2>CONTACT US</h2>
-                      <address>
-                          <p>Have questions, comments or just want to say hello:</p>
-                          <ul class="my_address">
-                              <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@visuals-rev.co.za</a></li>
-                              <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +27 81 574 6026</a></li>
-                              <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>258 Main Street & Green Street, City & Suburban  </span></a></li>
-                          </ul>
-                      </address>
-                  </div>
-              </div>
-             
-           
-              
-              
+ <!-- Footer Area -->
+<footer class="footer_area">
+  <div class="container">
+      <div class="footer_row row">
+          <div class="col-md-3 col-sm-6 footer_about">
+              <h2>BEST PLUG TO YOUR VISUAL NEEDS</h2>
+              <img src="images/vr.PNG" alt="">
+              <ul class="socail_icon">
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+              </ul>
           </div>
-       
-      </footer>
-      <!-- End Footer Area -->
-    
-        <style>
+          <div class="col-md-3 col-sm-6 footer_about quick">
+              <h2>Quick links</h2>
+              <ul class="quick_link">
+                  <li><a href="index.html"><i class="fa fa-chevron-right"></i>HOME</a></li>
+                  <li><a href="about.html"><i class="fa fa-chevron-right"></i>WHO ARE WE</a></li>
+                  <li><a href="Portfolio.html"><i class="fa fa-chevron-right"></i>OUR PORTFOLIO</a></li>
+                  <li><a href="Service.html"><i class="fa fa-chevron-right"></i>OUR SERVICES</a></li>
+                  <li><a href="contact.html"><i class="fa fa-chevron-right"></i>GET IN TOUCH</a></li>
+              </ul>
+          </div>
+          <div class="col-md-3 col-sm-6 footer_about">
+              <h2>Instagram Feed</h2>
+              <a href="https://www.instagram.com/your_instagram_handle/" target="_blank" class="instagram-text">
+                  @visualsrev: Just wrapped up an amazing wedding shoot! 🎥✨ #Photography #VisualsRev
+              </a>
+              
+              <a href="https://www.instagram.com/your_instagram_handle/" target="_blank" class="instagram-text">
+                  @visualsrev: Capturing the perfect sunset moment. 🌅📷 #GoldenHour #CinematicVibes
+              </a>
+          </div>
+          <div class="col-md-3 col-sm-6 footer_about">
+              <h2>CONTACT US</h2>
+              <address>
+                  <p>Have questions, comments or just want to say hello:</p>
+                  <ul class="my_address">
+                      <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@visuals-rev.co.za</a></li>
+                      <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+27 81 574 6026</a></li>
+                      <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>258 Main Street & Green Street, City & Suburban</span></a></li>
+                  </ul>
+              </address>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- End Footer Area -->
 
 
-/* Home container: Full width, takes up minimum full height, centered content */
-.home {
-  position: relative; /* Relative positioning for child elements */
-  width: 100%; /* Full width */
-  min-height: 100vh; /* Minimum height takes up the entire viewport height */
-  display: flex; /* Use Flexbox for layout */
-  justify-content: center; /* Center child elements horizontally */
-  flex-direction: column; /* Stack child elements vertically */
-  background: white; /* White background */
-}
-
-/* Home container for content positioning */
-.home-container {
-  position: absolute; /* Absolute positioning to control layout */
-  width: 100%; /* Full width */
-  z-index: 888; /* Stack above other elements */
-  align-items: center; /* Align items horizontally */
-  display: flex; /* Use Flexbox for layout */
-  justify-content: center; /* Center content horizontally */
-  flex-direction: column; /* Stack child elements vertically */
-}
-
-/* Home pseudo-element for overlay background */
-.home::before {
-  z-index: 777; /* Stack below content but above the video */
-  content: ''; /* Required for pseudo-elements */
-  position: absolute; /* Absolute positioning */
-  background: rgba(4, 133, 21, 0.3); /* Semi-transparent green overlay */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-}
-
-/* Styling for the main content of the home section */
-.home .home__content {
-  z-index: 888; /* On top of the background */
-  width: 70%; /* Set content width to 70% */
-  top: 50%; /* Positioned 50% from the top */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  position: absolute; /* Absolute positioning */
-  display: none; /* Initially hidden */
-  text-align: left; /* Align text to the left */
-}
-
-/* Display the content when it has an 'active' class */
-.home .home__content.active {
-  display: block; /* Show content when active */
-}
-
-/* Heading 1 styling */
-.home .home__content h1 {
-  font-size: 50px; /* Large font size */
-  font-weight: 900; /* Bold weight */
-  margin-bottom: 20px; /* Reduced margin for better spacing */
-  color: #00ff22; /* Green color */
-  text-transform: uppercase; /* Uppercase text */
-  letter-spacing: 2px; /* Slightly increased letter spacing */
-}
-
-/* Heading 2 styling */
-.home .home__content h2 {
-  font-size: 4rem; /* Large font size */
-  font-weight: 400; /* Normal font weight */
-  margin-bottom: 20px; /* Added margin for spacing */
-  color: #00ff22; /* Green color */
-  text-transform: uppercase; /* Uppercase text */
-  letter-spacing: 1px; /* Add some letter spacing */
-}
-
-/* Heading 3 styling */
-.home .home__content h3 {
-  font-size: 2.5rem; /* Sub-heading font size */
-  font-weight: 700; /* Bold weight */
-  margin-bottom: 20px; /* Added margin for spacing */
-  color: #ffffff; /* White text */
-}
-
-/* Paragraph styling (if you add paragraphs later) */
-.home .home__content p {
-  font-size: 1.2rem; /* Medium font size */
-  color: #ffffff; /* White text */
-  line-height: 1.6; /* Improve readability */
-  margin-bottom: 20px; /* Added margin for spacing */
-}
-
-/* Styling for background video */
-.home video {
-  z-index: 000; /* Send to background */
-  position: absolute; /* Absolute positioning */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Cover the container while maintaining aspect ratio */
-}
-
-/* Navigation styling for slider */
-.slider-navigation {
-  z-index: 888; /* Above other elements */
-  position: relative; /* Relative positioning */
-  display: flex; /* Use Flexbox */
-  justify-content: center; /* Center the buttons */
-  transform: translateY(650px); /* Move the navigation down */
-  margin-bottom: 12px; /* Margin at the bottom */
-}
-
-/* Button styling for navigation */
-.slider-navigation .nav-btn {
-  width: 12px; /* Set button width */
-  height: 12px; /* Set button height */
-  background: var(--color-heading); /* Background color from variable */
-  border-radius: 50%; /* Make the button circular */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 0 2px rgba(255, 0, 0, 0.5); /* Shadow effect */
-  transition: 0.3s ease; /* Smooth transition on hover */
-}
-
-/* Active state for navigation button */
-.slider-navigation .nav-btn.active {
-  background: var(--color-primary); /* Change color when active */
-}
-
-/* Space out navigation buttons except for the last one */
-.slider-navigation .nav-btn:not(:last-child) {
-  margin-right: 20px; /* Right margin */
-}
-
-/* Hover effect on navigation buttons */
-.slider-navigation .nav-btn:hover {
-  transform: scale(1.2); /* Scale up on hover */
-}
-
-/* Styling for video slides in the slider */
-.video-slide {
-  position: absolute; /* Absolute positioning */
-  width: 100%; /* Full width */
-  clip-path: circle(0% at 0 50%); /* Initial clip path for circular effect */
-  transition: 2s ease; /* Smooth transition */
-  transition-property: clip-path; /* Transition clip-path property */
-}
-
-/* Active state for video slide (expands the circle) */
-.video-slide.active {
-  clip-path: circle(150% at 0 50%); /* Expand clip path to show full video */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .home .home__content {
-    width: 80%; /* Increase width for smaller screens */
-  }
-
-  .home .home__content h1 {
-    font-size: 40px; /* Reduce font size */
-  }
-
-  .home .home__content h2 {
-    font-size: 3rem; /* Reduce font size */
-  }
-
-  .home .home__content h3 {
-    font-size: 2rem; /* Reduce font size */
-  }
-}
-
-@media (max-width: 768px) {
-  .home .home__content {
-    width: 90%; /* Increase width for mobile */
-    top: 30%; /* Adjust vertical positioning */
-  }
-
-  .home .home__content h1 {
-    font-size: 30px; /* Further reduce font size */
-  }
-
-  .home .home__content h2 {
-    font-size: 2.5rem; /* Further reduce font size */
-  }
-
-  .home .home__content h3 {
-    font-size: 1.5rem; /* Further reduce font size */
-  }
-
-  .slider-navigation {
-    transform: translateY(500px); /* Adjust navigation position */
-  }
-
-  .slider-navigation .nav-btn {
-    width: 10px;
-    height: 10px;
-  }
-
-  .slider-navigation .nav-btn:not(:last-child) {
-    margin-right: 15px; /* Reduce spacing between buttons */
-  }
-}
-
-@media (max-width: 480px) {
-  .home .home__content {
-    width: 95%; /* Full width for very small screens */
-    top: 20%; /* Adjust vertical positioning */
-  }
-
-  .home .home__content h1 {
-    font-size: 24px; /* Smallest font size */
-  }
-
-  .home .home__content h2 {
-    font-size: 2rem; /* Smallest font size */
-  }
-
-  .home .home__content h3 {
-    font-size: 1.2rem; /* Smallest font size */
-  }
-
-  .slider-navigation {
-    transform: translateY(400px); /* Adjust navigation position */
-  }
-}
-
-
-/* Latest work section */
-#latest-work {
-  padding: 70px 0;
-  text-align: center;
-  background-color: #000;
-}
-
-#latest-work .containerr {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-#latest-work h2 {
-  font-size: 2.5em;
-  margin-bottom: 60px;
-  color: #00ff0d;
-}
-
-/* Grid layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 columns for larger screens */
-  grid-auto-rows: 200px; /* Default row height */
-  gap: 20px; /* Spacing between grid items */
-}
-
-/* Grid item styling */
-.grid-item {
-  position: relative;
-  background-color: #222;
-  border-radius: 0px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure images and videos cover the grid item */
-.grid-item img,
-.grid-item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Text overlay for grid items */
-.grid-item h3 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  margin: 0;
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
-  font-size: 1.2em;
-}
-
-/* Large grid items (span 4 columns and 2 rows) */
-.grid-item.large {
-  grid-column: span 4;
-  grid-row: span 2;
-}
-
-/* Medium grid items (span 2 columns) */
-.grid-item.medium {
-  grid-column: span 2;
-}
-
-/* Small grid items (span 1 column and 1 row) */
-.grid-item.small {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  /* Reduce the number of columns for medium screens */
-  .grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  }
-
-  /* Adjust large items to span 3 columns */
-  .grid-item.large {
-    grid-column: span 3;
-  }
-
-  /* Adjust medium items to span 2 columns */
-  .grid-item.medium {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Stack grid items vertically on smaller screens */
-  .grid {
-    grid-template-columns: 1fr; /* 1 column */
-    grid-auto-rows: auto; /* Auto row height */
-  }
-
-  /* Reset spans for all items */
-  .grid-item.large,
-  .grid-item.medium,
-  .grid-item.small {
-    grid-column: span 1; /* All items span 1 column */
-    grid-row: span 1; /* All items span 1 row */
-  }
-}
-
-@media (max-width: 480px) {
-  /* Adjust padding and font sizes for very small screens */
-  #latest-work {
-    padding: 40px 0;
-  }
-
-  #latest-work h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-  }
-
-  /* Reduce gap between grid items */
-  .grid {
-    gap: 10px;
-  }
-}
-
-</style>
+ 
 <script src="js/videoslide.js"></script>
     <!-- jQuery JS -->
     <script src="js/jquery-1.12.0.min.js"></script>
