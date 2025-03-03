@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Visualsrev Pty Ltd is a creative journey capturing life's beautiful moments through professional photography and videography services.">
+  <meta name="keywords" content="photography, videography, wedding photography, event coverage, commercial shoots">
+  <meta name="author" content="Visualsrev Pty Ltd">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - Visualsrev Pty Ltd</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/letter-v.png" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="vendors/animate/animate.css" rel="stylesheet">
+    <!-- Icon CSS-->
+	<link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <!-- Camera Slider -->
+    <link rel="stylesheet" href="vendors/camera-slider/camera.css">
+    <!-- Owlcarousel CSS-->
+	<link rel="stylesheet" type="text/css" href="vendors/owl_carousel/owl.carousel.css" media="all">
+
+    <!--Theme Styles CSS-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+  <style>
+        .hero {
+    background: url('images/DSC03745.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 20px;
+    color: lime;
+  }
+
+
+        .about-sectionn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #000000; /* Blue background */
+        padding: 70px; /* Increase padding for more space */
+        position: relative;
+        color: white;
+        height: 1000px; /* Adjust the height to make the section taller */
+      }
+    
+      .images-wrapperr {
+        position: relative;
+        width: 50%;
+      }
+   
+    
+      .image-bottom-left {
+        position: absolute;
+        bottom: -170px;
+        left: 10px;
+        z-index: 3;
+        width: 80%;
+         border-radius: 15px;
+      }
+    
+      .image-right {
+        position: absolute;
+        bottom: -10px;
+        top: -25px;
+        right: -30%;
+        z-index: 4;
+        width: 60%;
+         border-radius: 15px;
+      }
+    
+      .text-contentt {
+  position: relative;
+  width: 40%;
+  color: #fff;
+  padding-left: 20px;
+  top: -230px; /* Moves it 50px down */
+  left: -110px; /* Moves it 30px to the left */
+}
+
+.text-contentt h2 {
+  font-size: 40px; /* Increases the heading size */
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.text-contentt p {
+  font-size: 22px; /* Increases the paragraph size */
+  margin-top: 0; /* Optional: Ensure no extra space above the paragraph */
+}
+
+
+
+
+
+/* General Section Styles */
+.process-section {
+  padding: 60px 20px;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+}
+
+.process-section h3 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+
+  /* Add styles for the description paragraph under the heading */
+  .process-description {
+    font-size: 18px;
+    color: #ccc; /* Matches card paragraph colors */
+    max-width: 800px; /* Keeps the text compact */
+    margin: 20px auto 40px; /* Adds spacing between heading and processes */
+    line-height: 1.6; /* Improves readability */
+  }
+
+/* Process Cards Container */
+.process-cards {
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+  flex-wrap: wrap;
+}
+
+/* Individual Process Card */
+.process-card {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 30px;
+  width: 310px; /* Ensure all cards are the same size */
+  height: 340px; /* Consistent height */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Process Number */
+.process-number {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.1;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+/* Card Content */
+.process-content {
+  position: relative;
+  z-index: 2;
+}
+
+.process-content h5 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 90px;
+  color: #fff;
+}
+
+.process-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+
+
+
+
+.our-clients {
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 40px 0; /* Adjust padding as needed */
+}
+
+.our-clients .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.our-clients h2 {
+    font-size: 2.8rem; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+    color: #333; /* Dark text color */
+}
+
+.our-clients p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #666; /* Medium gray text color */
+    margin-bottom: 2rem;
+}
+
+.client-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 300px; /* Increase logo size */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.client-logo {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 30px 0;
+    }
+    
+    .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+    
+    .footer-left {
+    flex: 1;
+    text-align: left;
+    }
+    
+    .footer-left a {
+    color: #000000;
+    text-decoration: none;
+    margin-right: 20px;
+    }
+    
+    .footer-logo {
+    flex: 1;
+    text-align: center;
+    }
+    
+    .footer-logo img {
+    max-width: 100px; /* Adjust size as needed */
+    }
+    
+    .footer-right {
+    flex: 1;
+    text-align: right;
+    }
+    
+    .footer-right a {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 20px;
+    }
+    
+    .footer-right a i {
+    font-size: 1.5em;
+    }
+    
+
+    </style>
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+	<!-- Top Header_Area -->
+	<section class="top_header_area">
+	    <div class="container">
+            <ul class="nav navbar-nav top_nav">
+                <li><a href="#"><i class="fa fa-phone"></i>081 574 6026</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>info@visuals-rev.co.za</a></li>
+                <li><a href="#"><i class="fa fa-clock-o"></i>Mon - Sat 12:00 - 20:00</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right social_nav">
+                <li><a href="#"><i class="fa fa-tik-tok" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+            </ul>
+	    </div>
+	</section>
+	<!-- End Top Header_Area -->
+
+	<!-- Header_Area -->
+    <nav class="navbar navbar-default header_aera" id="main_navbar">
+        <div class="container">
+         
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="col-md-2 p0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#min_navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/IMG_7427 (3) 4.png" alt=""></a>
+                </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="col-md-10 p0">
+                <div class="collapse navbar-collapse" id="min_navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <a href="index.html" >HOME</a></li>
+                        <li ><a href="about.html" >ABOUT US</a></li>
+                        <li ><a href="Portfolio.html"  >PORTFOLIO</a></li>
+                        <li><a href="Service.html">SERVICES</a></li>
+                   
+                        <li><a href="contact.html">CONTACT US</a></li>
+                      
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container -->
+    </nav>
+	<!-- End Header_Area -->
+
+    <section class="hero">
+        <div class="hero-content">
+          <h2>Contact Us</h2>
+          <p>Start capturing life's beautiful moments through our professional photography and videography services.</p>
+
+          
+         
+        </div>
+      </section>
+   
+
+   
+
+    <!-- All contact Info -->
+    <section class="all_contact_info">
+        <div class="container">
+            <div class="row contact_row">
+                <div class="col-sm-6 contact_info">
+                    <h2>Contact Info</h2>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <div class="location">
+                        <div class="location_laft">
+                            <a class="f_location" href="#">location</a>
+                            <a href="#">phone</a>
+                            <a href="#">email</a>
+                        </div>
+                        <div class="address">
+                            <a href="#">258 Main Street & Green Street,<br> City & Suburban </a>
+                            <a href="#">081 574 6026</a>
+                             <a href="#">info@visuals-rev.co.za</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 contact_info send_message">
+                    <h2>Book a shoot Now!</h2>
+                    <form class="form-inline contact_box">
+                        <input type="text" class="form-control input_box" placeholder="First Name *">
+                        <input type="text" class="form-control input_box" placeholder="Last Name *">
+                        <input type="text" class="form-control input_box" placeholder="Your Email *">
+                        <input type="text" class="form-control input_box" placeholder="Type of Service *">
+                        <input type="tel" class="form-control input_box" placeholder="Phone Number">
+                        <textarea class="form-control input_box" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn-default">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End All contact Info -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="Portfolio.html">Portfolio</a>
+                <a href="Service.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-logo">
+                <img src="images/vr.PNG" alt="VisualsRev Production">
+            </div>
+            <div class="footer-right">
+                <a href="https://www.instagram.com/visualsrev/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery JS -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Animate JS -->
+    <script src="vendors/animate/wow.min.js"></script>
+    <!-- Camera Slider -->
+    <script src="vendors/camera-slider/jquery.easing.1.3.js"></script>
+    <script src="vendors/camera-slider/camera.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+    <!-- Progress JS -->
+    <script src="vendors/Counter-Up/jquery.counterup.min.js"></script>
+    <script src="vendors/Counter-Up/waypoints.min.js"></script>
+    <!-- Owlcarousel JS -->
+    <script src="vendors/owl_carousel/owl.carousel.min.js"></script>
+    <!-- Stellar JS -->
+    <script src="vendors/stellar/jquery.stellar.js"></script>
+    <!-- Map JS -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="vendors/map/topbuilder_map.min.js"></script>
+    <!-- Theme JS -->
+    <script src="js/theme.js"></script>
+</body>
+</html>
