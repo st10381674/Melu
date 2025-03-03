@@ -44,195 +44,6 @@
   }
 
 
-        .about-sectionn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #000000; /* Blue background */
-        padding: 70px; /* Increase padding for more space */
-        position: relative;
-        color: white;
-        height: 1000px; /* Adjust the height to make the section taller */
-      }
-    
-      .images-wrapperr {
-        position: relative;
-        width: 50%;
-      }
-   
-    
-      .image-bottom-left {
-        position: absolute;
-        bottom: -170px;
-        left: 10px;
-        z-index: 3;
-        width: 80%;
-         border-radius: 15px;
-      }
-    
-      .image-right {
-        position: absolute;
-        bottom: -10px;
-        top: -25px;
-        right: -30%;
-        z-index: 4;
-        width: 60%;
-         border-radius: 15px;
-      }
-    
-      .text-contentt {
-  position: relative;
-  width: 40%;
-  color: #fff;
-  padding-left: 20px;
-  top: -230px; /* Moves it 50px down */
-  left: -110px; /* Moves it 30px to the left */
-}
-
-.text-contentt h2 {
-  font-size: 40px; /* Increases the heading size */
-  margin-bottom: 20px; /* Adds space below the heading */
-}
-
-.text-contentt p {
-  font-size: 22px; /* Increases the paragraph size */
-  margin-top: 0; /* Optional: Ensure no extra space above the paragraph */
-}
-
-
-
-
-
-/* General Section Styles */
-.process-section {
-  padding: 60px 20px;
-  background-color: #000;
-  text-align: center;
-  color: #fff;
-}
-
-.process-section h3 {
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #fff;
-}
-
-
-  /* Add styles for the description paragraph under the heading */
-  .process-description {
-    font-size: 18px;
-    color: #ccc; /* Matches card paragraph colors */
-    max-width: 800px; /* Keeps the text compact */
-    margin: 20px auto 40px; /* Adds spacing between heading and processes */
-    line-height: 1.6; /* Improves readability */
-  }
-
-/* Process Cards Container */
-.process-cards {
-  display: flex;
-  justify-content: center;
-  gap: 75px;
-  flex-wrap: wrap;
-}
-
-/* Individual Process Card */
-.process-card {
-  background-color: #111;
-  border-radius: 15px;
-  padding: 30px;
-  width: 310px; /* Ensure all cards are the same size */
-  height: 340px; /* Consistent height */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  position: relative;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.process-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-}
-
-/* Process Number */
-.process-number {
-  font-size: 60px;
-  font-weight: bold;
-  color: #fff;
-  opacity: 0.1;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
-
-/* Card Content */
-.process-content {
-  position: relative;
-  z-index: 2;
-}
-
-.process-content h5 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  margin-top: 90px;
-  color: #fff;
-}
-
-.process-content p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-
-
-
-
-.our-clients {
-    background-color: #f7f7f7; /* Light gray background */
-    padding: 40px 0; /* Adjust padding as needed */
-}
-
-.our-clients .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.our-clients h2 {
-    font-size: 2.8rem; /* Adjust font size */
-    font-weight: bold;
-    margin-bottom: 1.8rem;
-    color: #333; /* Dark text color */
-}
-
-.our-clients p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: #666; /* Medium gray text color */
-    margin-bottom: 2rem;
-}
-
-.client-logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    max-height: 300px; /* Increase logo size */
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-}
-
-.client-logo {
-    text-align: center;
-    padding: 10px;
-}
-
-
 
 
 
@@ -403,23 +214,54 @@ footer {
     </section>
     <!-- End All contact Info -->
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <a href="index.html">Home</a>
-                <a href="About.html">About</a>
-                <a href="Portfolio.html">Portfolio</a>
-                <a href="Service.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-logo">
-                <img src="images/vr.PNG" alt="VisualsRev Production">
-            </div>
-            <div class="footer-right">
-                <a href="https://www.instagram.com/visualsrev/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Area -->
+    <footer class="footer_area">
+      <div class="container">
+          <div class="footer_row row">
+              <div class="col-md-3 col-sm-6 footer_about">
+                  <h2>BEST PLUG TO YOUR VISUAL NEEDS</h2>
+                  <img src="images/vr.PNG" alt="">
+                  <ul class="socail_icon">
+                      <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                  </ul>
+              </div>
+              <div class="col-md-3 col-sm-6 footer_about quick">
+                  <h2>Quick links</h2>
+                  <ul class="quick_link">
+                      <li><a href="index.html"><i class="fa fa-chevron-right"></i>HOME</a></li>
+                      <li><a href="about.html"><i class="fa fa-chevron-right"></i>WHO ARE WE</a></li>
+                      <li><a href="Portfolio.html"><i class="fa fa-chevron-right"></i>OUR PORTFOLIO</a></li>
+                      <li><a href="Service.html"><i class="fa fa-chevron-right"></i>OUR SERVICES</a></li>
+                      <li><a href="contact.html"><i class="fa fa-chevron-right"></i>GET IN TOUCH</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-3 col-sm-6 footer_about">
+                  <h2>Twitter Feed</h2>
+                  <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                  <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+              </div>
+              <div class="col-md-3 col-sm-6 footer_about">
+                  <h2>CONTACT US</h2>
+                  <address>
+                      <p>Have questions, comments or just want to say hello:</p>
+                      <ul class="my_address">
+                          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@visuals-rev.co.za</a></li>
+                          <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+27 81 574 6026</a></li>
+                          <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>258 Main Street & Green Street, City & Suburban  </span></a></li>
+                      </ul>
+                  </address>
+              </div>
+          </div>
+         
+       
+          
+          
+      </div>
+   
+  </footer>
+  <!-- End Footer Area -->
+
     <!-- jQuery JS -->
     <script src="js/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap JS -->
