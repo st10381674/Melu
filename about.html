@@ -73,61 +73,6 @@
   }
 
   
-        .about-sectionn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #000000; /* Blue background */
-        padding: 70px; /* Increase padding for more space */
-        position: relative;
-        color: white;
-        height: 1000px; /* Adjust the height to make the section taller */
-      }
-    
-      .images-wrapperr {
-        position: relative;
-        width: 50%;
-      }
-   
-    
-      .image-bottom-left {
-        position: absolute;
-        bottom: -170px;
-        left: 10px;
-        z-index: 3;
-        width: 80%;
-         border-radius: 15px;
-      }
-    
-      .image-right {
-        position: absolute;
-        bottom: -10px;
-        top: -25px;
-        right: -30%;
-        z-index: 4;
-        width: 60%;
-         border-radius: 15px;
-      }
-    
-      .text-contentt {
-  position: relative;
-  width: 40%;
-  color: #fff;
-  padding-left: 20px;
-  top: -230px; /* Moves it 50px down */
-  left: -110px; /* Moves it 30px to the left */
-}
-
-.text-contentt h2 {
-  font-size: 40px; /* Increases the heading size */
-  margin-bottom: 20px; /* Adds space below the heading */
-}
-
-.text-contentt p {
-  font-size: 22px; /* Increases the paragraph size */
-  margin-top: 0; /* Optional: Ensure no extra space above the paragraph */
-}
-
 
 
 
@@ -371,9 +316,7 @@ footer {
                         <li ><a href="about.html" >ABOUT US</a></li>
                         <li ><a href="Portfolio.html"  >PORTFOLIO</a></li>
                         <li><a href="Service.html">SERVICES</a></li>
-                   
                         <li><a href="contact.html">CONTACT US</a></li>
-                      
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -381,26 +324,317 @@ footer {
     </nav>
 	<!-- End Header_Area -->
 
-    <section class="hero">
-        <div class="hero-content">
-          <h2>About Visualsrev</h2>
-          <p>The best plug to your visual needs</p>
-        </div>
-      </section>
+    
 
-      
-      <div class="about-sectionn">
-        <div class="images-wrapperr">
-
-          <img src="images/b8c14a5e4ed6ccd260aa9887d90d4ca7.jpg" class="image-right" />
-          <img src="images/4b4ec309789c5e0dfb39d3549dc71cf2 (1).jpg" class="image-bottom-left" />
-        </div>
-        <div class="text-contentt">
-          <h2>The Artist Behind the Lens</h2>
-          <p> I'm Wayne Ncube, a passionate videographer and photographer dedicated to capturing life's most vibrant moments. With a creative eye and attention to detail, I transform stories into timeless visuals,whether it's through stunning photographs or cinematic video productions.My work is driven by a love for storytelling and the art of preserving memories that resonate forever.</p>
-         
-        </div>
+          <!-- Slider area -->
+    <section class="slider_area row m0">
+      <div class="slider_inner">
+          <div data-thumb="images/DSC04369.jpg" data-src="images/DSC04369.jpg">
+              <div class="camera_caption">
+                 <div class="container">
+                      <h5 class=" wow fadeInUp animated">About Visualsrev</h5>
+                      <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">The best plug to your visual needs</h3>
+                      <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
+                 </div>
+              </div>
+          </div>
+          <div data-thumb="images/IMG_0095.jpg" data-src="images/IMG_0095.jpg">
+              <div class="camera_caption">
+                 <div class="container">
+                      <h5 class=" wow fadeInUp animated">Where Art Meets imagination</h5>
+                      <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">Your Vision, Our Lens</h3>
+                      <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our passion for photography and videography drives us to capture the essence of every moment. From concept to completion, we ensure every detail is perfect, delivering visuals that inspire and captivate.</p>
+                 </div>
+              </div>
+          </div>
       </div>
+  </section>
+  <!-- End Slider area -->
+
+  <style>
+    /*--------------------------------------------------*/
+/* slider_area */
+.slider_area .slider_inner .camera_caption {
+  height: 100%;
+}
+.slider_area .slider_inner .camera_caption div {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+  text-shadow: none;
+  left: 0;
+}
+.slider_area .slider_inner .camera_caption div h5 {
+  color: #00ff0d;
+  font: 400 24px "Roboto", sans-serif;
+}
+.slider_area .slider_inner .camera_caption div h3 {
+  color: #fff;
+  font: 400 30px "Roboto", sans-serif;
+  padding-top: 27px;
+}
+.slider_area .slider_inner .camera_caption div p {
+  padding-top: 40px;
+  color: #fff;
+  font: 400 14px/26px "Roboto", sans-serif;
+  max-width: 750px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+.slider_area .slider_inner .camera_caption div a {
+  font: 700 18px/59px "Roboto", sans-serif;
+  width: 180px;
+  text-align: center;
+  background: #00ff0d;
+  display: block;
+  text-shadow: none;
+  margin: 0 auto;
+  outline: none !important;
+  box-shadow: none;
+  border: 0;
+  color: #222222;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+.slider_area .slider_inner .camera_caption div a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  right: 0;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.slider_area .slider_inner .camera_caption div a:hover:before, .slider_area .slider_inner .camera_caption div a:focus:before {
+  transform: scaleY(1);
+}
+.slider_area .slider_inner .camera_prev, .slider_area .slider_inner .camera_next {
+  opacity: 1 !important;
+  background-color: transparent;
+}
+.slider_area .slider_inner .camera_prev span, .slider_area .slider_inner .camera_next span {
+  display: none;
+}
+.slider_area .slider_inner .camera_prev {
+  position: relative;
+}
+.slider_area .slider_inner .camera_prev:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  background: url("../vendors/camera-slider/images/prev.png") no-repeat;
+  left: 382px;
+  height: 50px;
+  width: 50px;
+}
+.slider_area .slider_inner .camera_next:after {
+  content: "";
+  position: absolute !important;
+  top: 0;
+  background: url("../vendors/camera-slider/images/next.png") no-repeat;
+  right: 382px;
+  height: 50px;
+  width: 50px;
+}
+.slider_area .slider_inner .camera_fakehover {
+  top: 20px;
+}
+
+/* End slider_area */
+/* slider_area_tow */
+.slider_area_tow .slider_inner .camera_caption div .container {
+  width: 1170px !important;
+  text-align: left;
+  position: relative;
+  top: 250px;
+}
+.slider_area_tow .slider_inner .camera_caption div .container p {
+  margin: 0;
+}
+.slider_area_tow .slider_inner .camera_caption div .container a {
+  margin: 0;
+}
+.slider_area_tow .slider_inner .camera_prev:after {
+  left: 230px;
+}
+.slider_area_tow .slider_inner .camera_next:after {
+  right: 230px;
+}
+
+
+
+
+
+.about-sectionn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #000000; /* Blue background */
+        padding: 70px; /* Increase padding for more space */
+        position: relative;
+        color: white;
+        height: 1000px; /* Adjust the height to make the section taller */
+      }
+    
+      .images-wrapperr {
+        position: relative;
+        width: 50%;
+      }
+   
+    
+      .image-bottom-left {
+        position: absolute;
+        bottom: -170px;
+        left: 10px;
+        z-index: 3;
+        width: 80%;
+         border-radius: 15px;
+      }
+    
+      .image-right {
+        position: absolute;
+        bottom: -10px;
+        top: -25px;
+        right: -30%;
+        z-index: 4;
+        width: 60%;
+         border-radius: 15px;
+      }
+    
+      .text-contentt {
+  position: relative;
+  width: 40%;
+  color: #fff;
+  padding-left: 20px;
+  top: -230px; /* Moves it 50px down */
+  left: -110px; /* Moves it 30px to the left */
+}
+
+.text-contentt h2 {
+  font-size: 40px; /* Increases the heading size */
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.text-contentt p {
+  font-size: 22px; /* Increases the paragraph size */
+  margin-top: 0; /* Optional: Ensure no extra space above the paragraph */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .about-sectionn {
+    padding: 50px;
+  }
+
+  .text-contentt {
+    width: 50%;
+    top: -150px;
+    left: -80px;
+  }
+
+  .text-contentt h2 {
+    font-size: 35px;
+  }
+
+  .text-contentt p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-sectionn {
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+  }
+
+  .images-wrapperr {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-bottom-left,
+  .image-right {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text-contentt {
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .text-contentt h2 {
+    font-size: 30px;
+  }
+
+  .text-contentt p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-sectionn {
+    padding: 20px;
+  }
+
+  .text-contentt h2 {
+    font-size: 28px;
+  }
+
+  .text-contentt p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-contentt h2 {
+    font-size: 24px;
+  }
+
+  .text-contentt p {
+    font-size: 14px;
+  }
+}
+
+
+
+  </style>
+     
+     
+     
+    
+     <div class="about-sectionn">
+      <div class="images-wrapperr">
+
+        <img src="images/b8c14a5e4ed6ccd260aa9887d90d4ca7.jpg" class="image-right" />
+        <img src="images/4b4ec309789c5e0dfb39d3549dc71cf2 (1).jpg" class="image-bottom-left" />
+      </div>
+      <div class="text-contentt">
+        <h2>The Artist Behind the Lens</h2>
+        <p> I'm Wayne Ncube, a passionate videographer and photographer dedicated to capturing life's most vibrant moments. With a creative eye and attention to detail, I transform stories into timeless visuals,whether it's through stunning photographs or cinematic video productions.My work is driven by a love for storytelling and the art of preserving memories that resonate forever.</p>
+       
+      </div>
+    </div>
+    
 
 
 
@@ -432,80 +666,40 @@ footer {
         </div>
       </section>
       
-
-
-      <section class="our-clients py-20">
-        <div class="container mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-8">Our Clients</h2>
-          <p class="text-lg mb-6">We are proud to have collaborated with a diverse range of clients, from small businesses to large corporations. Here are some of the brands that trust us with their visual storytelling needs:</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="client-logo">
-              <img src="images/afro-removebg-preview.png" alt="Client Logo 1">
-            </div>
-            <div class="client-logo">
-              <img src="images/amazulu-removebg-preview.png" alt="Client Logo 2">
-            </div>
-            <div class="client-logo">
-              <img src="images/av-removebg-preview.png" alt="Client Logo 3">
-            </div>
-            <div class="client-logo">
-              <img src="images/BUDWEISER-removebg-preview.png" alt="Client Logo 4">
-            </div>
-            <div class="client-logo">
-              <img src="images/cubana-removebg-preview.png" alt="Client Logo 5">
-            </div>
-            <div class="client-logo">
-              <img src="images/CORONA-removebg-preview.png" alt="Client Logo 6">
-            </div>
-            <div class="client-logo">
-              <img src="images/huawei-removebg-preview.png" alt="Client Logo 7">
-            </div>
-            <div class="client-logo">
-              <img src="images/image_2024-04-28_162407587-removebg-preview.png" alt="Client Logo 8">
-            </div>
-            <div class="client-logo">
-                <img src="images/jamess-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/mcd-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/nandos-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/nelson-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/niknax-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/old-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/schweppes-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/SAB-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/SANRAL-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/tanqueray-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/visa-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/winston-removebg-preview.png" alt="Client Logo 8">
-              </div>
-              <div class="client-logo">
-                <img src="images/prasa.png" alt="Client Logo 9">
-              </div>
-             
-          </div>
-        </div>
-      </section>
+<!-- Our Partners Area -->
+<section class="our_partners_area">
+  <div class="container">
+      <div class="tittle wow fadeInUp">
+          <h2>Our Clients</h2>
+          <h4>We are proud to have collaborated with a diverse range of clients, from small businesses to large corporations. Here are some of the brands that trust us with their visual storytelling needs:</h4>
+      </div>
+      <div class="partners">
+          <div class="item"><img src="images/afro-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/amazulu-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/av-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/BUDWEISER-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/cubana-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/CORONA-removebg-preview.png"  alt=""></div>
+          <div class="item"><img src="images/huawei-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/image_2024-04-28_162407587-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/jamess-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/mcd-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/winston-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/visa-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/tanqueray-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/SANRAL-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/SAB-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/schweppes-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/old-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/niknax-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/nelson-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/nandos-removebg-preview.png" alt=""></div>
+          <div class="item"><img src="images/prasa.png" alt=""></div>
+      </div>
+  </div>
+  
+</section>
+<!-- End Our Partners Area -->
 
       
 
@@ -573,7 +767,7 @@ footer {
       <div class="container">
           <div class="row book_now">
               <div class="col-md-10 booking_text">
-                  <h4>Capture Your Moments with VisualsRev</h4>
+                  <h4>Capture Your Moments with Visualsrev Pty</h4>
                   <p> Book your session today and let us create stunning visuals that tell your story.</p>
               </div>
               <div class="col-md-2 p0 book_bottun">
@@ -599,23 +793,54 @@ footer {
 
 
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="Portfolio.html">Portfolio</a>
-        <a href="Service.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </div>
-        <div class="footer-logo">
-            <img src="Images/vr.PNG" alt="VisualsRev Logo">
+   <!-- Footer Area -->
+   <footer class="footer_area">
+    <div class="container">
+        <div class="footer_row row">
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>ABOUT OUR COMPANY</h2>
+                <img src="images/vr.PNG" alt="">
+                <ul class="socail_icon">
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about quick">
+                <h2>Quick links</h2>
+                <ul class="quick_link">
+                    <li><a href="index.html"><i class="fa fa-chevron-right"></i>HOME</a></li>
+                    <li><a href="about.html"><i class="fa fa-chevron-right"></i>WHO ARE WE</a></li>
+                    <li><a href="Portfolio.html"><i class="fa fa-chevron-right"></i>OUR PORTFOLIO</a></li>
+                    <li><a href="Service.html"><i class="fa fa-chevron-right"></i>OUR SERVICES</a></li>
+                    <li><a href="contact.html"><i class="fa fa-chevron-right"></i>GET IN TOUCH</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>Twitter Feed</h2>
+                <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>CONTACT US</h2>
+                <address>
+                    <p>Have questions, comments or just want to say hello:</p>
+                    <ul class="my_address">
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@visuals-rev.co.za</a></li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+27 81 574 6026</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>258 Main Street & Green Street, City & Suburban  </span></a></li>
+                    </ul>
+                </address>
+            </div>
         </div>
-        <div class="footer-right">
-          <a href="https://www.instagram.com/visualsrev/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        </div>
+       
+     
+        
+        
     </div>
+ 
 </footer>
+<!-- End Footer Area -->
+
 
     <!-- jQuery JS -->
     <script src="js/jquery-1.12.0.min.js"></script>
