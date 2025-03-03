@@ -174,104 +174,51 @@
 
 
 
-
 .faq-section {
-  max-width: 1000px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.faq-container {
-  display: flex;
-}
-
-.faq-questions {
-  width: 35%;
-  background: #f4f9ff;
-  padding: 20px;
-  border-right: 2px solid #ddd;
-}
-
-.faq-questions h2 {
-  font-size: 26px;
-  color: #00ff00;
-  margin-bottom: 20px;
-}
-
-.faq-questions ul {
-  list-style: none;
-  padding: 0;
-}
-
-.faq-questions li {
-  padding: 15px;
-  margin: 10px 0;
-  background: #ffffff;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.faq-questions li i {
-  margin-right: 10px;
-  color: #00ff00;
-}
-
-.faq-questions li:hover {
-  background: #00ff00;
-  color: #ffffff;
-  transform: translateX(5px);
-}
-
-.faq-questions li.active {
-  background: #00ff00;
-  color: #ffffff;
-}
-
-.faq-answers {
-  width: 65%;
-  padding: 20px;
-}
-
-.faq-answers .faq-answer {
-  display: none;
-}
-
-.faq-answers .faq-answer.active {
-  display: block;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.faq-answers h3 {
-  font-size: 22px;
-  color: #0044cc;
-}
-
-.faq-answers p {
-  font-size: 16px;
-  color: #555;
-  margin-top: 10px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
 
 
+        }
+        .faq-container h2 {
+            text-align: center;
+            color: #000000;
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            background: #000000;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .faq-question:hover {
+            background: #00ff2a;
+        }
+        .faq-question i {
+            margin-right: 10px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background: #e9f2ff;
+            margin-top: -5px;
+            border-radius: 0 0 5px 5px;
+            border-left: 3px solid #00ff00;
+        }
+        .faq-answer.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
 
 
@@ -381,7 +328,6 @@ footer {
                         <li ><a href="about.html" >ABOUT US</a></li>
                         <li ><a href="Portfolio.html"  >PORTFOLIO</a></li>
                         <li><a href="Service.html">SERVICES</a></li>
-                   
                         <li><a href="contact.html">CONTACT US</a></li>
                       
                     </ul>
@@ -420,7 +366,7 @@ footer {
           </div>
           <div class="col-md-4 col-sm-6 construction">
              <div class="cns-img">
-                  <img src="images/pexels-jakubzerdzicki-30106455.jpg" alt="Videography">
+                  <img src="images/pexels-brunomassao-2228831.jpg" alt="Videography">
              </div>
              <div class="cns-content">
                   <i class="fa fa-camera" aria-hidden="true"></i>
@@ -430,7 +376,7 @@ footer {
           </div>
           <div class="col-md-4 col-sm-6 construction">
              <div class="cns-img">
-                  <img src="images/jakob-owens-sxrBantx5Wo-unsplash.jpg" alt="Editing">
+                  <img src="images/peter-stumpf-Q2-OEzSZY94-unsplash.jpg" alt="Editing">
              </div>
              <div class="cns-content">
                   <i class="fa fa-edit" aria-hidden="true"></i>
@@ -445,54 +391,50 @@ footer {
 
 
 
-
 <section class="faq-section">
   <div class="faq-container">
-    <div class="faq-questions">
-      <h2>FAQs</h2>
-      <ul>
-        <li class="faq-question active" data-answer="answer1">
+      <h2>Frequently Asked questions</h2>
+      <div class="faq-question" data-answer="answer1">
           <i class="fas fa-video"></i> What services does Visualsrev offer?
-        </li>
-        <li class="faq-question" data-answer="answer2">
+      </div>
+      <div id="answer1" class="faq-answer">
+          <p>We specialize in videography, photography, and video editing services for weddings, corporate events, and more.</p>
+      </div>
+      <div class="faq-question" data-answer="answer2">
           <i class="fas fa-calendar-alt"></i> How can I book your services?
-        </li>
-        <li class="faq-question" data-answer="answer3">
-          <i class="fas fa-tag"></i> What is your pricing structure?
-        </li>
-        <li class="faq-question" data-answer="answer4">
-          <i class="fas fa-box"></i> Do you provide custom packages?
-        </li>
-        <li class="faq-question" data-answer="answer5">
-          <i class="fas fa-clock"></i> How long does it take to deliver the final project?
-        </li>
-      </ul>
-    </div>
-    <div class="faq-answers">
-      <div id="answer1" class="faq-answer active">
-        <h3>What services does Visualsrev offer?</h3>
-        <p>We specialize in videography, photography, and video editing services for weddings, corporate events, and more.</p>
       </div>
       <div id="answer2" class="faq-answer">
-        <h3>How can I book your services?</h3>
-        <p>You can book our services by contacting us through our website’s contact form or reaching out via email or phone.</p>
+          <p>You can book our services through our website's contact form, email, or phone.</p>
+      </div>
+      <div class="faq-question" data-answer="answer3">
+          <i class="fas fa-tag"></i> What is your pricing structure?
       </div>
       <div id="answer3" class="faq-answer">
-        <h3>What is your pricing structure?</h3>
-        <p>Our pricing depends on the type of service and project requirements. Please reach out for a personalized quote.</p>
+          <p>Our pricing depends on the type of service and project requirements. Please contact us for a quote.</p>
+      </div>
+      <div class="faq-question" data-answer="answer4">
+          <i class="fas fa-box"></i> Do you provide custom packages?
       </div>
       <div id="answer4" class="faq-answer">
-        <h3>Do you provide custom packages?</h3>
-        <p>Yes, we offer customizable packages to fit your specific needs and preferences.</p>
+          <p>Yes, we offer customizable packages tailored to your needs.</p>
+      </div>
+      <div class="faq-question" data-answer="answer5">
+          <i class="fas fa-clock"></i> How long does it take to deliver the final project?
       </div>
       <div id="answer5" class="faq-answer">
-        <h3>How long does it take to deliver the final project?</h3>
-        <p>The delivery time varies based on the project, but typically it ranges from 1-3 weeks for photography and 2-6 weeks for videography.</p>
+          <p>Typically, photography takes 1-3 weeks and videography 2-6 weeks for final delivery.</p>
       </div>
-    </div>
+      <div class="faq-question" data-answer="answer6">
+          <i class="fas fa-file-video"></i> Do you provide raw footage?
+      </div>
+      <div id="answer6" class="faq-answer">
+          <p>Yes, we can provide raw footage upon request. Additional charges may apply.</p>
+      </div>
   </div>
 </section>
 
+
+ 
 
  <!-- Our Partners Area -->
  <section class="our_partners_area">
@@ -501,7 +443,7 @@ footer {
     <div class="container">
         <div class="row book_now">
             <div class="col-md-10 booking_text">
-                <h4>Capture Your Moments with VisualsRev</h4>
+                <h4>Capture Your Moments with Visualsrev Pty</h4>
                 <p> Book your session today and let us create stunning visuals that tell your story.</p>
             </div>
             <div class="col-md-2 p0 book_bottun">
@@ -515,24 +457,54 @@ footer {
 
 
 
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Portfolio.html">Portfolio</a>
-      <a href="Service.html">Services</a>
-      <a href="contact.html">Contact</a>
-  </div>
-      <div class="footer-logo">
-          <img src="Images/vr.PNG" alt="VisualsRev Logo">
-      </div>
-      <div class="footer-right">
-        <a href="https://www.instagram.com/visualsrev/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-  </div>
+   <!-- Footer Area -->
+   <footer class="footer_area">
+    <div class="container">
+        <div class="footer_row row">
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>ABOUT OUR COMPANY</h2>
+                <img src="images/vr.PNG" alt="">
+                <ul class="socail_icon">
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about quick">
+                <h2>Quick links</h2>
+                <ul class="quick_link">
+                    <li><a href="index.html"><i class="fa fa-chevron-right"></i>HOME</a></li>
+                    <li><a href="about.html"><i class="fa fa-chevron-right"></i>WHO ARE WE</a></li>
+                    <li><a href="Portfolio.html"><i class="fa fa-chevron-right"></i>OUR PORTFOLIO</a></li>
+                    <li><a href="Service.html"><i class="fa fa-chevron-right"></i>OUR SERVICES</a></li>
+                    <li><a href="contact.html"><i class="fa fa-chevron-right"></i>GET IN TOUCH</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>Twitter Feed</h2>
+                <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+            </div>
+            <div class="col-md-3 col-sm-6 footer_about">
+                <h2>CONTACT US</h2>
+                <address>
+                    <p>Have questions, comments or just want to say hello:</p>
+                    <ul class="my_address">
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@visuals-rev.co.za</a></li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+27 81 574 6026</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>258 Main Street & Green Street, City & Suburban  </span></a></li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+       
+     
+        
+        
+    </div>
+ 
 </footer>
+<!-- End Footer Area -->
+
 
 
 <script>
@@ -577,5 +549,31 @@ faqQuestions.forEach(question => {
   <script src="vendors/stellar/jquery.stellar.js"></script>
   <!-- Theme JS -->
   <script src="js/theme.js"></script>
+
+
+  <script>
+    const accordion = document.querySelector(".accordion");
+
+accordion.addEventListener("click", (e) => {
+  const activePanel = e.target.closest(".accordion__panel");
+  if (!activePanel) return;
+  toggleAccordion(activePanel);
+});
+
+const toggleAccordion = (panelToActivate) => {
+  const activeButton = panelToActivate.querySelector("button");
+  const activePanel = panelToActivate.querySelector(".accordion__content");
+  const activePanelIsOpened = activeButton.getAttribute("aria-expanded");
+
+  if (activePanelIsOpened === "true") {
+    activeButton.setAttribute("aria-expanded", false);
+    activePanel.setAttribute("aria-hidden", true);
+  } else {
+    activeButton.setAttribute("aria-expanded", true);
+    activePanel.setAttribute("aria-hidden", false);
+  }
+};
+
+  </script>
 </body>
 </html>
