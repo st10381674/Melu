@@ -1,39 +1,4 @@
-/*----------------------------------------------------
-@File: Default Styles
-@Author: Colorlib
-@URL:https://colorlib.com
 
-This file contains the styling for the actual theme, this
-is the file you need to edit to change the look of the
-theme.
-
-This files contents are outlined below.
-
-	1. Variables
-	2. Prefix
-	3. header
-	4. Slider
-    5. Builder
-    6. About
-    7. Offer
-    8. Feature
-    9. Services
-    10. Team
-    11. Achievments
-    12. Testimonial
-    13. Gallery
-    14. Blog
-    15. Call
-    16. Construction
-    17. Min-blog
-    18. 404
-    19. Contact
-    20. Footer
-    21. Responsive
-
-
-----------------------------------------------------*/
-/*--------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,500,500i,700,700i");
 /*Color Variables*/
 ::selection {
@@ -1355,8 +1320,25 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 
 /*--------------------------------------------------*/
+/* All Contact Info CSS */
 
-/* All contact Info Css */
+.all_contact_info .send_message .input_box {
+  border: 1px solid #727272;
+  border-radius: 0px;
+  box-shadow: none;
+  outline: none;
+  height: 45px;
+  padding-left: 15px;
+  width: 100%;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.all_contact_info .send_message textarea {
+  height: 120px !important;
+  resize: none;
+}
+
 .all_contact_info .contact_row {
   padding: 100px 0;
 }
@@ -1371,7 +1353,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: absolute;
   height: 2px;
   width: 80px;
-  background: #00ff22;
+  background: #00ff2a;
   left: 0;
   bottom: 0;
 }
@@ -1390,7 +1372,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   text-transform: uppercase;
 }
 .all_contact_info .contact_row .contact_info .location a:hover, .all_contact_info .contact_row .contact_info .location a:focus {
-  color:  #00ff22;
+  color: #00ff22;
 }
 .all_contact_info .contact_row .contact_info .location .f_location {
   padding-bottom: 30px;
@@ -1406,14 +1388,14 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   padding-top: 30px;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box {
-  border: 1px solid rgb(114, 114, 114);
+  border: 1px solid #dfe3e4;
   border-radius: 0;
   box-shadow: none;
   outline: none;
   height: 50px;
   padding-left: 15px;
   width: 100%;
-  color:rgb(0, 0, 0);
+  color: #d3dadf;
   margin-bottom: 20px;
 }
 .all_contact_info .contact_row .send_message .contact_box .input_box.placeholder {
@@ -1432,7 +1414,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .all_contact_info .contact_row .send_message .contact_box button {
   color: #fefefe;
   font: 400 14px/40px "Roboto", sans-serif;
-  background:  #00ff22;
+  background: #00ff0d;
   width: 140px;
   color: #222222;
   border: 0;
@@ -1440,11 +1422,34 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   text-transform: uppercase;
 }
 .all_contact_info .contact_row .send_message .contact_box button:hover, .all_contact_info .contact_row .send_message .contact_box button:focus {
-  color:  #00ff22;
+  color: #00ff0d;
   background: #222222;
 }
 
+
+
 /* End All contact Info Css */
+/* All Contact Info CSS */
+
+.all_contact_info .send_message button {
+  font: 400 16px "Roboto", sans-serif;
+  background: #00ff22;
+  width: 150px;
+  height: 50px;
+  color: #222;
+  border: none;
+  border-radius: 0px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.all_contact_info .send_message button:hover,
+.all_contact_info .send_message button:focus {
+  color: #00ff22;
+  background: #222;
+}
+
+
 /*--------------------------------------------------*/
 .footer_area {
   background: url("../images/footer.jpg") no-repeat;
@@ -2079,3 +2084,21 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+.instagram-text {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.instagram-text:hover {
+  color: #00ff22; /* Change to your brand color */
+}
