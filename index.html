@@ -38,228 +38,78 @@
     <style>
 
 
-      /* Home container: Full width, takes up minimum full height, centered content */
-      .home {
-        position: relative; /* Relative positioning for child elements */
-        width: 100%; /* Full width */
-        min-height: 100vh; /* Minimum height takes up the entire viewport height */
-        display: flex; /* Use Flexbox for layout */
-        justify-content: center; /* Center child elements horizontally */
-        flex-direction: column; /* Stack child elements vertically */
-        background: white; /* White background */
-      }
-      
-      /* Home container for content positioning */
-      .home-container {
-        position: absolute; /* Absolute positioning to control layout */
-        width: 100%; /* Full width */
-        z-index: 888; /* Stack above other elements */
-        align-items: center; /* Align items horizontally */
-        display: flex; /* Use Flexbox for layout */
-        justify-content: center; /* Center content horizontally */
-        flex-direction: column; /* Stack child elements vertically */
-      }
-      
-      /* Home pseudo-element for overlay background */
-      .home::before {
-        z-index: 777; /* Stack below content but above the video */
-        content: ''; /* Required for pseudo-elements */
-        position: absolute; /* Absolute positioning */
-        background: rgba(4, 133, 21, 0.3); /* Semi-transparent green overlay */
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        top: 0; /* Position at the top */
-        left: 0; /* Position at the left */
-      }
-      
-      /* Styling for the main content of the home section */
-      .home .home__content {
-        z-index: 888; /* On top of the background */
-        width: 70%; /* Set content width to 70% */
-        top: 50%; /* Positioned 50% from the top */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-        position: absolute; /* Absolute positioning */
-        display: none; /* Initially hidden */
-        text-align: left; /* Align text to the left */
-      }
-      
-      /* Display the content when it has an 'active' class */
-      .home .home__content.active {
-        display: block; /* Show content when active */
-      }
-      
-      /* Heading 1 styling */
-      .home .home__content h1 {
-        font-size: 50px; /* Large font size */
-        font-weight: 900; /* Bold weight */
-        margin-bottom: 20px; /* Reduced margin for better spacing */
-        color: #00ff22; /* Green color */
-        text-transform: uppercase; /* Uppercase text */
-        letter-spacing: 2px; /* Slightly increased letter spacing */
-      }
-      
-      /* Heading 2 styling */
-      .home .home__content h2 {
-        font-size: 4rem; /* Large font size */
-        font-weight: 400; /* Normal font weight */
-        margin-bottom: 20px; /* Added margin for spacing */
-        color: #00ff22; /* Green color */
-        text-transform: uppercase; /* Uppercase text */
-        letter-spacing: 1px; /* Add some letter spacing */
-      }
-      
-      /* Heading 3 styling */
-      .home .home__content h3 {
-        font-size: 2.5rem; /* Sub-heading font size */
-        font-weight: 700; /* Bold weight */
-        margin-bottom: 20px; /* Added margin for spacing */
-        color: #ffffff; /* White text */
-      }
-      
-      /* Paragraph styling (if you add paragraphs later) */
-      .home .home__content p {
-        font-size: 1.2rem; /* Medium font size */
-        color: #ffffff; /* White text */
-        line-height: 1.6; /* Improve readability */
-        margin-bottom: 20px; /* Added margin for spacing */
-      }
-      
-      /* Styling for background video */
-      .home video {
-        z-index: 000; /* Send to background */
-        position: absolute; /* Absolute positioning */
-        top: 0; /* Position at the top */
-        left: 0; /* Position at the left */
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        object-fit: cover; /* Cover the container while maintaining aspect ratio */
-      }
-      
-      /* Navigation styling for slider */
-      .slider-navigation {
-        z-index: 888; /* Above other elements */
-        position: relative; /* Relative positioning */
-        display: flex; /* Use Flexbox */
-        justify-content: center; /* Center the buttons */
-        transform: translateY(650px); /* Move the navigation down */
-        margin-bottom: 12px; /* Margin at the bottom */
-      }
-      
-      /* Button styling for navigation */
-      .slider-navigation .nav-btn {
-        width: 12px; /* Set button width */
-        height: 12px; /* Set button height */
-        background: var(--color-heading); /* Background color from variable */
-        border-radius: 50%; /* Make the button circular */
-        cursor: pointer; /* Pointer cursor on hover */
-        box-shadow: 0 0 2px rgba(255, 0, 0, 0.5); /* Shadow effect */
-        transition: 0.3s ease; /* Smooth transition on hover */
-      }
-      
-      /* Active state for navigation button */
-      .slider-navigation .nav-btn.active {
-        background: var(--color-primary); /* Change color when active */
-      }
-      
-      /* Space out navigation buttons except for the last one */
-      .slider-navigation .nav-btn:not(:last-child) {
-        margin-right: 20px; /* Right margin */
-      }
-      
-      /* Hover effect on navigation buttons */
-      .slider-navigation .nav-btn:hover {
-        transform: scale(1.2); /* Scale up on hover */
-      }
-      
-      /* Styling for video slides in the slider */
-      .video-slide {
-        position: absolute; /* Absolute positioning */
-        width: 100%; /* Full width */
-        clip-path: circle(0% at 0 50%); /* Initial clip path for circular effect */
-        transition: 2s ease; /* Smooth transition */
-        transition-property: clip-path; /* Transition clip-path property */
-      }
-      
-      /* Active state for video slide (expands the circle) */
-      .video-slide.active {
-        clip-path: circle(150% at 0 50%); /* Expand clip path to show full video */
-      }
-      
-      /* Responsive adjustments */
-      @media (max-width: 1200px) {
-        .home .home__content {
-          width: 80%; /* Increase width for smaller screens */
-        }
-      
-        .home .home__content h1 {
-          font-size: 40px; /* Reduce font size */
-        }
-      
-        .home .home__content h2 {
-          font-size: 3rem; /* Reduce font size */
-        }
-      
-        .home .home__content h3 {
-          font-size: 2rem; /* Reduce font size */
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .home .home__content {
-          width: 90%; /* Increase width for mobile */
-          top: 30%; /* Adjust vertical positioning */
-        }
-      
-        .home .home__content h1 {
-          font-size: 30px; /* Further reduce font size */
-        }
-      
-        .home .home__content h2 {
-          font-size: 2.5rem; /* Further reduce font size */
-        }
-      
-        .home .home__content h3 {
-          font-size: 1.5rem; /* Further reduce font size */
-        }
-      
-        .slider-navigation {
-          transform: translateY(500px); /* Adjust navigation position */
-        }
-      
-        .slider-navigation .nav-btn {
-          width: 10px;
-          height: 10px;
-        }
-      
-        .slider-navigation .nav-btn:not(:last-child) {
-          margin-right: 15px; /* Reduce spacing between buttons */
-        }
-      }
-      
-      @media (max-width: 480px) {
-        .home .home__content {
-          width: 95%; /* Full width for very small screens */
-          top: 20%; /* Adjust vertical positioning */
-        }
-      
-        .home .home__content h1 {
-          font-size: 24px; /* Smallest font size */
-        }
-      
-        .home .home__content h2 {
-          font-size: 2rem; /* Smallest font size */
-        }
-      
-        .home .home__content h3 {
-          font-size: 1.2rem; /* Smallest font size */
-        }
-      
-        .slider-navigation {
-          transform: translateY(400px); /* Adjust navigation position */
-        }
-      }
-      
+.video-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+/* Video Styles */
+.video-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Initial full rectangle */
+  opacity: 0;
+  transition: clip-path 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.video-slide.active {
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Full rectangle */
+}
+/* Text Overlay Styles */
+.home__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.home__content.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.home__content h1 {
+  font-size: 4.5rem;
+  margin: 0 0 1rem 0; /* Add spacing below the heading */
+  color: #00ff00; /* Yellow */
+}
+
+.home__content p {
+  font-size: 2.5rem;
+  margin: 0;
+  color:rgb(255, 255, 255); /* Light Blue */
+  line-height: 1.5; /* Improve readability */
+}
+
+.home__content .home-directors {
+  font-size: 1.5rem;
+  color: #00FF00; /* Green */
+  font-weight: bold; /* Make it stand out */
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .home__content h1 {
+    font-size: 3rem;
+  }
+  .home__content p {
+    font-size: 1.8rem;
+  }
+}
       
       /* Latest work section */
       #latest-work {
@@ -399,13 +249,7 @@
         <ul class="nav navbar-nav top_nav">
           <li><a href="#"><i class="fa fa-phone"></i>081 574 6026</a></li>
           <li><a href="#"><i class="fa fa-envelope-o"></i>info@visuals-rev.co.za</a></li>
-          <li><a href="#"><i class="fa fa-clock-o"></i>Mon - Sat 12:00 - 20:00</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right social_nav">
-        <li><a href="https://www.instagram.com/visualsrev/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        <li><a href="https://wa.me/27815746026" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-
-
+          <li><a href="#"><i class="fa fa-clock-o"></i>Mon - Sat: 08:00 - 17:00 | Sun: Personal Booking </a></li>
       </ul>
 	    </div>
 	</section>
@@ -424,7 +268,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/IMG_7427 (3) 4.png" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src="images/removedbg/IMG_7427 (3) 4.png" alt=""></a>
                 </div>
             </div>
 
@@ -449,45 +293,36 @@
 
  
   <section id="homepage" class="home container-pw">
-    <div class="container">
-      <!-- Video slides -->
-      <video class="video-slide active" src="videos/Isuzu x SAFW - 3rd Interview.mp4" autoplay muted loop></video>
-      <video class="video-slide" src="videos/MTV SHUGA BTS - 10th.mp4" autoplay muted loop></video>
-      <video class="video-slide" src="videos/MTV SHUGA BTS - 3.mp4" autoplay muted loop></video>
-      <video class="video-slide" src="videos/Zakes x All Blvck .mp4" autoplay muted loop></video>
   
-      <!-- Home content -->
+      <div class="video-slider">
+        <!-- Videos -->
+        <video class="video-slide active" src="videos/Isuzu x SAFW - 3rd Interview.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/MTV SHUGA BTS - 10th.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/MTV SHUGA BTS - 3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/Zakes x All Blvck .mp4" autoplay muted loop></video>
+      
+      <!-- Text Content -->
       <div class="home__content active">
-        <h1>Realize Your Vision</h1>
-        <h2>with Us</h2>
-        <h3>Excellence in Impactful Media Production</h3>
-      </div>
-  
-      <!-- Other content sections -->
-      <div class="home__content">
         <h1>Visualsrev</h1>
-        <h3>We excel at immortalizing the essence of every event, from weddings to corporate gatherings, with unmatched artistry and flair.</h3>
+        <p>Bring your ideas to life with our expertise in impactful media production.</p>
+        
       </div>
-  
       <div class="home__content">
-        <h1>Who We Are</h1>
-        <h3 class="home-directors">DISCOVER OUR STORY</h3>
+        <h1>Realize Your Vision with us </h1>
+        <p>We specialize in capturing the essence of every moment, from weddings to corporate events, with unmatched creativity and precision.</p>
       </div>
-  
       <div class="home__content">
-        <h1>The Power of Visual Storytelling</h1>
-        <h3>Providing comprehensive services  Videography and Photography.</h3>
+        <h1>Who are we</h1>
+        <p>Discover the story behind our passion for visual storytelling.</p>
       </div>
-  
-      <!-- Slider navigation -->
-      <div class="slider-navigation">
-        <div class="nav-btn active"></div>
-        <div class="nav-btn"></div>
-        <div class="nav-btn"></div>
-        <div class="nav-btn"></div>
-        <div class="nav-btn"></div>
+      <div class="home__content">
+        <h1>Best plug to your visual needs</h1>
+        <p>Offering comprehensive services in videography and photography to bring your stories to life.</p>
       </div>
-    </div>
+      </div>
+    
+
+   
   </section>
   
   <!-------------Videoslide section ends---------->
@@ -705,7 +540,7 @@
       <div class="footer_row row">
           <div class="col-md-3 col-sm-6 footer_about">
               <h2>BEST PLUG TO YOUR VISUAL NEEDS</h2>
-              <img src="images/vr.PNG" alt="">
+              <img src="images/removedbg/vr.PNG" alt="">
               <ul class="socail_icon">
                   <li><a href="https://www.instagram.com/visualsrev/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                   <li><a href="https://wa.me/27815746026" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
